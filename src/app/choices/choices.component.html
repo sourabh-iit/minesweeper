@@ -1,0 +1,20 @@
+<div class="main">
+  <h1>Minesweeper Game</h1>
+  <div class="choices">
+    <mat-card>
+      <mat-nav-list>
+        <h2>Choose Level</h2>
+        <a mat-list-item routerLink="beginner">Beginner</a>
+        <a mat-list-item routerLink="intermediate">Intermediate</a>
+        <a mat-list-item routerLink="advanced">Advanced</a>
+      </mat-nav-list>
+    </mat-card>
+  </div>
+  <div class="rules">
+    <h2>How to play</h2>
+    <p>Minesweeper game consists of a group of squares where each square represents a region. Each region either contains a mine or not. Your mission is to reveal (or "open") all the mine-free regions and mark the ones that contain mines. You open the region by left-clicking it, and mark a region by shift-clicking. The key for determining whether a certain region contains a mine or not is that for every 3x3 grid (9 regions) of squares, the number written on the region in the center represents the number of mines in the 8 other surrounding regions.
+
+        So, when starting your game, your first few clicks will depend on your luck to find mine-free regions, but once you open a fair amount of regions, you can use logic to find the regions that contain mines.</p>
+  </div>
+</div>
+

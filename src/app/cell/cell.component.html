@@ -1,0 +1,6 @@
+<div class="cell-wrapper">
+  <div class="cell" [ngStyle]="position" (click)="onclick()"
+    [ngClass]="{'gold': !isRevealed, 'green': isRevealed, 'cursor-pointer': !isRevealed, 'red': isRevealed && isMine}">
+      <span style="color: white" *ngIf="isRevealed">{{adjacentMines}}</span>
+  </div>
+</div>

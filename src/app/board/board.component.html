@@ -1,0 +1,32 @@
+<div class="main">
+  <h1>Minesweeper Game</h1>
+  <h2>Level - {{ level | titlecase }}</h2>
+
+  <div><button mat-raised-button color="primary" (click)="startGame()" *ngIf="gameState==4">Start Game</button></div>
+
+  <div class="board" [ngStyle]="boardStyle" *ngIf="gameState==0">
+    <ng-container *ngFor="let row of rows">
+      <ng-container *ngFor="let column of rows">
+        <app-cell [adjacentMines]="cells[row][column]"
+          [row]="row" [column]="column"
+          [cellLength]="cellLength"
+          [isRevealed]="cellsRevealed[row][column]"
+          (clicked)="onclick($event, row, column)"></app-cell>
+      </ng-container>
+    </ng-container>
+    <div [ngStyle]="buttonSyle">
+      <button mat-raised-button color="primary" (click)="startGame()">Start Again</button>
+      <button mat-raised-button color="warn" class="ml-2" [routerLink]="['/']">Change Level</button>
+    </div>
+  </div>
+
+  <div class="success" *ngIf="gameState==1">
+    <h1>Congrats! You have won.</h1>
+    <button (click)="startGame()">Start Again</button>
+  </div>
+
+  <div class="fail" *ngIf="gameState==2">
+    <h1>Oops! Game over.</h1>
+    <button mat-raised-button color="primary" (click)="startGame()">Start Again</button>
+  </div>
+</div>
